@@ -47,7 +47,7 @@ sub parse_callFile {
 	my $callFile = "$footPeak_folder/.CALL/$fileName1.PEAK.out";
 	my ($name) = $fileName1 =~ /^(PCB.+desc\w+_gene\w+)_(Pos|Neg|Unk).+$/; $name = $fileName1 if not defined $name;
 	$input1 = $callFile;
-	my ($PCB, $BC, $plasmid, $desc, $gene, $strand, $window, $thres, $cpg) = $fileName1 =~ /(PCB\d+)_bcBC(\d+)_plasmid(.+)_desc(.+)_gene(.+)_(Pos|Neg)_(\d+\.?\d*)_(\d+\.?\d*)_([A-Z][A-Z][A-Z]?)\.?/;
+	my ($PCB, $BC, $plasmid, $desc, $gene, $strand, $window, $thres, $cpg) = $fileName1 =~ /(PCB\d+)_bcBC(\d+)_plasmid(.+)_desc(.+)_gene(.+)_(Pos|Neg|Unk)_(\d+\.?\d*)_(\d+\.?\d*)_([A-Z][A-Z][A-Z]?)\.?/;
 	$thres = int(100*$thres);
 	my $type = "w${window}t$thres";
 	my $goodstrand = $coor{uc($gene)}; die "Cannot get goodstrand from gene=$gene fileName=$LGN$fileName1$N!\n\n" if not defined $goodstrand;
