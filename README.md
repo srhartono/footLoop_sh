@@ -210,7 +210,7 @@ Reads were mapped using Bismark v0.2.0 (Krueger and Andrews, 2011) to their resp
 
 For each read, we assign strand based on their conversion types as follows:
 1.	We excluded regions that are very GC poor (C < 6 and G < 6) and regions with very few conversions (C->T < 6 and G->A < 6).
-2.	If the number of C->T conversions is within +/- 10% of G->A conversions, then we assigned these as unknown. These regions were analyzed separately (Supplementary Figure SX), but in general there are very few of these regions (Supplementary Figure SX).
+2.	If the number of C->T conversions is within +/- 10% of G->A conversions, then we assigned these as unknown. These regions were analyzed separately, but in general there are very few of these regions.
 3.	Otherwise, reads with more C to T conversions were assigned as non-template/R-loop forming strand, and regions with more G to A conversions were assigned as template strand.
 Furthermore, regions with indels often create false positives, as it contain higher amount of mismatched nucleotides adjacent to it. Therefore, to be more conservative, we masked up to 5bp around these regions and we treated these regions as “no data” in downstream calculation.
 
